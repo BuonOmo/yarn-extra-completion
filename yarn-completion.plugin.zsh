@@ -81,9 +81,6 @@ _yc_yarn_remove_completion() {
 }
 
 _yc_yarn_run_completion() {
-  # Only run on `yarn run ?`
-  [[ ! "$(_yc_no_of_yarn_args)" = "3" ]] && return
-
   # Look for a package.json file
   local package_json="$(_yc_recursively_look_for package.json)"
 
@@ -105,6 +102,7 @@ _yc_yarn_commands_completion() {
   _values \
     'subcommnad' \
       'add[Installs a package and any packages that it depends on.]' \
+      'audit[Scan every packages and find every vulnerabilities]' \
       'bin[Displays the location of the yarn bin folder.]' \
       'cache[Yarn stores every package in a global cache in your user directory on the file system.]' \
       'check[Verifies that versions of the package.]' \
@@ -131,8 +129,13 @@ _yc_yarn_commands_completion() {
       'team[Maintain team memberships]' \
       'unlink[Unlink a previously created symlink for a package.]' \
       'upgrade[Upgrades packages to their latest version based on the specified range.]' \
+      'upgrade --latest[Upgrades packages to their latest.]' \
+      'upgrade-interactive[Upgrades selected packages to their latest version based on the specified range.]' \
+      'upgrade-interactive --latest[Upgrades selected packages to their latest version.]' \
       'version[Updates the package version.]' \
       'why[Show information about why a package is installed.]'
+
+  _yc_yarn_run_completion
 }
 
 _yc_zsh_better_yarn_completion() {
@@ -141,9 +144,6 @@ _yc_zsh_better_yarn_completion() {
 
   # Load custom completion commands
   case "$(_yc_yarn_command)" in
-    add)
-      _yc_yarn_add_completion
-      ;;
     remove)
       _yc_yarn_remove_completion
       ;;
