@@ -1,12 +1,20 @@
-# yarn-completion
+# yarn-extra-completion
 
-This plugin is a fork of [zsh-better-npm-completion](https://github.com/lukechilds/zsh-better-npm-completion). It works the same way, as you can see with `npm` demo:
+This plugin is greatly inspired by [zsh-better-npm-completion](https://github.com/lukechilds/zsh-better-npm-completion). It works the same way, as you can see with `npm` demo:
 
 <img src="demo.gif" width="690">
 
-* Makes `yarn add` recommendations from npm cache
-* Makes `yarn remove` recommendations from `dependencies`/`devDependencies`
-* Shows detailed information on script contents for `npm run`
+* Makes `yarn add` recommendations from npm cache,
+* Makes `yarn remove` recommendations from `dependencies`/`devDependencies`,
+* Shows detailed information on script contents for `npm run`,
+* Calls already installed yarn completion for any other command.
+
+# Pre-requisites
+
+You'll need [jq](https://stedolan.github.io/jq/download/).
+
+It is strongly suggested that you also have the default yarn suggestion under
+the name of `_yarn`. Or that you set `YARN_EXTRA_COMPLETION_DEFAULT=_your_default_function`.
 
 ## Installation
 
