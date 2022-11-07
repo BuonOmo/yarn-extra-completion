@@ -3,7 +3,7 @@
 _yc_run_default() {
 	if (( ${+YARN_EXTRA_COMPLETION_DEFAULT} )); then
 		$YARN_EXTRA_COMPLETION_DEFAULT "$@"
-	elif (( ${+commands[_yarn]} )); then
+	elif type _yarn &> /dev/null; then
 		_yarn "$@"
 	fi
 }
