@@ -11,7 +11,14 @@ _yc_no_of_yarn_args() {
 }
 
 _yc_list_cached_modules() {
-  ls ~/.npm 2>/dev/null
+  yarn cache list --json | {
+    echo "cached"
+    if (( ${+commands[jq]} )); then
+      jq --raw-output '.data.body[] | .[0]'
+    else
+      echo "completion error" "please install jq"
+    fi
+  }
 }
 
 _yc_recursively_look_for() {
