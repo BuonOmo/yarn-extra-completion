@@ -23,14 +23,14 @@ the name of `_yarn`. Or that you set `YARN_EXTRA_COMPLETION_DEFAULT=_your_defaul
 Bundle `zsh-better-npm-completion` in your `.zshrc`
 
 ```shell
-antigen bundle buonomo/yarn-completion
+antigen bundle buonomo/yarn-extra-completion
 ```
 
 ### Using [zplug](https://github.com/b4b4r07/zplug)
 Load `zsh-better-npm-completion` as a plugin in your `.zshrc`
 
 ```shell
-zplug "buonomo/yarn-completion", defer:2
+zplug "buonomo/yarn-extra-completion", defer:2
 
 ```
 ### Using [zgen](https://github.com/tarjoilija/zgen)
@@ -38,32 +38,32 @@ zplug "buonomo/yarn-completion", defer:2
 Include the load command in your `.zshrc`
 
 ```shell
-zgen load buonomo/yarn-completion
+zgen load buonomo/yarn-extra-completion
 ```
 
 ### As an [Oh My ZSH!](https://github.com/robbyrussell/oh-my-zsh) custom plugin
 
-Clone `yarn-completion` into your custom plugins repo
+Clone `yarn-extra-completion` into your custom plugins repo
 
 ```shell
-git clone https://github.com/buonomo/yarn-completion ~/.oh-my-zsh/custom/plugins/yarn-completion
+git clone https://github.com/buonomo/yarn-extra-completion ~/.oh-my-zsh/custom/plugins/yarn-extra-completion
 ```
 Then load as a plugin in your `.zshrc`
 
 ```shell
-plugins+=(yarn-completion)
+plugins+=(yarn-extra-completion)
 ```
 
 ### Manually
-Clone this repository somewhere (`~/.yarn-completion` for example)
+Clone this repository somewhere (`~/.yarn-extra-completion` for example)
 
 ```shell
-git clone https://github.com/buonomo/yarn-completion.git ~/.yarn-completion
+git clone https://github.com/buonomo/yarn-extra-completion.git ~/.yarn-extra-completion
 ```
 Then source it in your `.zshrc`
 
 ```shell
-source ~/.yarn-completion/yarn-completion.plugin.zsh
+source ~/.yarn-extra-completion/yarn-extra-completion.plugin.zsh
 ```
 
 ## License
